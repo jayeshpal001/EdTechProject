@@ -1,55 +1,72 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaSearch, FaHeart, FaShoppingCart, FaBell } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const navLinkClass = ({ isActive }) =>
-    isActive ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600';
-
   return (
-    <nav className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <h1 className="text-xl font-bold text-blue-600">MyApp</h1>
-          </div>
+    <nav className="bg-white shadow-md px-4 py-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        
+        {/* Left Section */}
+        <div className="flex items-center space-x-4">
+          <h1 className="text-2xl font-bold text-black cursor-pointer">
+            <span className="text-purple-600">U</span>demy
+          </h1>
+          <NavLink to="/" className="hidden md:block text-gray-700 hover:text-blue-600">Explore</NavLink>
+        </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
-            <NavLink to="/" className={navLinkClass}>Home</NavLink>
-            <NavLink to="/about" className={navLinkClass}>About</NavLink>
-            <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
-            <NavLink to="/login" className={navLinkClass}>Login</NavLink>
-            <NavLink to="/signup" className={navLinkClass}>SignUp</NavLink>
+        {/* Search Bar */}
+        <div className="flex-1 mx-4">
+          <div className="flex items-center bg-gray-100 rounded-full px-4 py-2">
+            <FaSearch className="text-gray-500 mr-2" />
+            <input
+              type="text"
+              placeholder="Search for anything"
+              className="bg-transparent outline-none w-full"
+            />
           </div>
+        </div>
 
-          {/* Mobile menu button */}
-          <div className="flex md:hidden items-center">
-            <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+        {/* Right Section */}
+        <div className="hidden md:flex items-center space-x-6 text-gray-700">
+          <NavLink to="/my-learning" className="hover:text-blue-600">My Learning</NavLink>
+
+          <FaHeart className="cursor-pointer hover:text-red-500" />
+          <FaShoppingCart className="cursor-pointer hover:text-blue-600" />
+          {/* <FaBell className="cursor-pointer hover:text-yellow-500" /> */}
+
+          <div className="bg-gray-900 text-white w-8 h-8 flex items-center justify-center rounded-full cursor-pointer">
+            JP
           </div>
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="flex md:hidden items-center">
+          <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white px-4 pt-4 pb-2 space-y-2 shadow-sm">
-          <NavLink to="/" className={navLinkClass}>Home</NavLink>
-          <NavLink to="/about" className={navLinkClass}>About</NavLink>
-          <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
-          <NavLink to="/login" className={navLinkClass}>Login</NavLink>
-          <NavLink to="/signup" className={navLinkClass}>SignUp</NavLink>
+        <div className="md:hidden bg-white px-4 pt-4 pb-2 space-y-2 shadow-sm text-gray-700">
+          <NavLink to="/" className="block hover:text-blue-600">Explore</NavLink>
+          <NavLink to="/business" className="block hover:text-blue-600">Udemy Business</NavLink>
+          <NavLink to="/teach" className="block hover:text-blue-600">Teach on Udemy</NavLink>
+          <NavLink to="/my-learning" className="block hover:text-blue-600">My Learning</NavLink>
+          <NavLink to="/login" className="block hover:text-blue-600">Login</NavLink>
+          <NavLink to="/signup" className="block hover:text-blue-600">SignUp</NavLink>
         </div>
       )}
     </nav>

@@ -11,14 +11,36 @@ function CourseDetail() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8">
-      <img src={course.image} alt={course.title} className="w-full md:w-1/2 rounded mb-8" />
-      <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
-      <p className="text-lg mb-4 max-w-2xl text-center">{course.description}</p>
-      <p className="text-2xl font-semibold mb-6">{course.price}</p>
-      <button className="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 transition">
-        Buy Now
-      </button>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-16 px-4">
+      <div className="max-w-5xl w-full bg-white rounded-2xl shadow-lg overflow-hidden grid md:grid-cols-2 gap-8 p-8">
+
+        {/* Course Image */}
+        <div className="flex items-center justify-center">
+          <img
+            src={course.image}
+            alt={course.title}
+            className="rounded-lg w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        {/* Course Details */}
+        <div className="flex flex-col justify-center space-y-6">
+          <h1 className="text-4xl font-bold text-gray-800">{course.title}</h1>
+          <p className="text-lg text-gray-600">{course.description}</p>
+          <p className="text-3xl font-semibold text-indigo-600">{course.price}</p>
+
+          <div className="flex space-x-4">
+            <button className="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-lg">
+              Buy Now
+            </button>
+
+            <button className="bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-900 transition shadow-lg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }
