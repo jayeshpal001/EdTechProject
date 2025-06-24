@@ -26,8 +26,6 @@ function Login() {
 
     // ye hoti hai good practice 
     const [formValaData, setFormValaData] = useState({
-        fname: "",
-        lname: "",
         email: "",
         password: ""
 
