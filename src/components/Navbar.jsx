@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaSearch, FaHeart, FaShoppingCart, FaBell } from 'react-icons/fa';
+import { FaSearch, FaHeart, FaShoppingCart } from 'react-icons/fa';
+import ProfileMenu from './ProfileMenu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,9 +40,7 @@ const Navbar = () => {
           <FaShoppingCart className="cursor-pointer hover:text-blue-600" />
           {/* <FaBell className="cursor-pointer hover:text-yellow-500" /> */}
 
-          <div className="bg-gray-900 text-white w-8 h-8 flex items-center justify-center rounded-full cursor-pointer">
-            JP
-          </div>
+          <ProfileMenu/>
         </div>
 
         {/* Mobile menu button */}
@@ -62,8 +61,8 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white px-4 pt-4 pb-2 space-y-2 shadow-sm text-gray-700">
           <NavLink to="/" className="block hover:text-blue-600">Explore</NavLink>
-          <NavLink to="/business" className="block hover:text-blue-600">Udemy Business</NavLink>
-          <NavLink to="/teach" className="block hover:text-blue-600">Teach on Udemy</NavLink>
+          {/* <NavLink to="/business" className="block hover:text-blue-600">Udemy Business</NavLink>
+          <NavLink to="/teach" className="block hover:text-blue-600">Teach on Udemy</NavLink> */}
           <NavLink to="/my-learning" className="block hover:text-blue-600">My Learning</NavLink>
           <NavLink to="/login" className="block hover:text-blue-600">Login</NavLink>
           <NavLink to="/signup" className="block hover:text-blue-600">SignUp</NavLink>
