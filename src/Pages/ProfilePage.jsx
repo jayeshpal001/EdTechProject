@@ -26,15 +26,15 @@ const ProfilePage = () => {
           </div>
           <h2 className="text-xl font-semibold">Jayash Pal</h2>
           <nav className="w-full space-y-2">
-            <a href="#" className="block px-4 py-2 hover:bg-gray-200 rounded">View Public Profile</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-200 rounded font-semibold bg-gray-200">Profile</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Photo</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Account Security</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Subscriptions</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Payment Methods</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Privacy</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Notification Preferences</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Close Account</a>
+            <link to="#" className="block px-4 py-2 hover:bg-gray-200 rounded">View Public Profile</link>
+            <link to="#" className="block px-4 py-2 hover:bg-gray-200 rounded font-semibold bg-gray-200">Profile</link>
+            <link to="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Photo</link>
+            <link to="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Account Security</link>
+            <link to="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Subscriptions</link>
+            <link to="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Payment Methods</link>
+            <link to="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Privacy</link>
+            <link to="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Notification Preferences</link>
+            <link to="#" className="block px-4 py-2 hover:bg-gray-200 rounded">Close Account</link>
           </nav>
         </div>
       </aside>
