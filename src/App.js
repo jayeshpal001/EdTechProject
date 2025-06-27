@@ -9,10 +9,11 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Footer from './components/Footer';
 import ProfilePage from './Pages/ProfilePage';
+import { CartPage } from './Pages/CartPage';
 function App() {
   return (
     <>
-
+     
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
@@ -22,6 +23,7 @@ function App() {
         <Route path='/about' element={<About />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/profile' element={<ProfilePage />} />
+         <Route path='/cart' element={<CartPage />} />
 
       </Routes>
       <Footer />
